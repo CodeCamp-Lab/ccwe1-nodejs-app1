@@ -1,0 +1,27 @@
+@BASE_URL = http://localhost:3000
+
+
+### Welcome GET /
+GET {{BASE_URL}}
+
+
+### Products GET /products
+GET {{BASE_URL}}/products
+
+
+### Products GET /product/:id
+GET {{BASE_URL}}/products/2
+
+
+### Product price GET /product-price/:price
+GET {{BASE_URL}}/product-price/250
+
+
+### Products POST /products
+POST {{BASE_URL}}/products
+Content-Type: application/json
+
+{
+  "name": "Monitor",
+  "price": 3500
+}
