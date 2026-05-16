@@ -1,5 +1,4 @@
 import express from "express";
-import { users } from "../data/users.js";
 import { checkAdmin } from "../middleware/checkAdmin.js";
 import {
   getUsers,
