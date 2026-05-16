@@ -1,0 +1,57 @@
+@BASE_URL = http://localhost:3000
+
+
+### Welcome GET /
+GET {{BASE_URL}}
+
+
+### Products GET /products
+GET {{BASE_URL}}/products
+
+
+### Products GET /product/:id
+GET {{BASE_URL}}/products/2
+
+
+### Product price GET /product-price/:price
+GET {{BASE_URL}}/products/price/250
+
+
+### Products POST /products
+POST {{BASE_URL}}/products
+Content-Type: application/json
+
+{
+  "name": "KEY",
+  "price": 2500
+}
+
+
+### Products PUT /products/:id
+PUT {{BASE_URL}}/products/2
+Content-Type: application/json
+
+{
+  "name": "Gaming Keyboard",
+  "price": 2500
+}
+
+
+### Products PATCH /products/:id
+PATCH {{BASE_URL}}/products/1
+Content-Type: application/json
+
+{
+  "price": 999
+}
+
+### Prodcts DELETE /products/:id
+DELETE {{BASE_URL}}/products/1
+
+### Product Search GET /product/search
+GET {{BASE_URL}}/products/search?name=mou
+
+### Admin GET /admin
+GET {{BASE_URL}}/admin
+Authorization: Bearer 123
+x-api-key: abc123

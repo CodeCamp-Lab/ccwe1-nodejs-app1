@@ -1,0 +1,20 @@
+@BASE_URL = http://localhost:3000
+
+
+### BLOGS GET /
+GET {{BASE_URL}}/blogs
+
+
+### BLOG By Id GET /blogs/:blogId
+GET {{BASE_URL}}/blogs/2
+
+
+### Comments By Id GET /blogs/:blogId/comments
+GET {{BASE_URL}}/blogs/4/comments
+
+
+### Comment By Id GET /blogs/:blogId/comments/:commentId
+GET {{BASE_URL}}/blogs/1/comments/2
+
+### Comment Count GET /blogs/:blogId/comments/count
+GET {{BASE_URL}}/blogs/1/comments/count
