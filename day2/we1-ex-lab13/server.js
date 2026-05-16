@@ -1,4 +1,6 @@
 import express from "express";
+import { checkAdmin } from "./middleware/checkAdmin.js";
+import { logger } from "./middleware/logger.js";
 
 const app = express();
 const PORT = 3000;
@@ -9,6 +11,7 @@ const users = [
 ];
 
 app.use(express.json());
+app.use(logger);
 
 app.get("/", (req, res) => {
   res.send("Welcome Api v0.1.0");
@@ -27,7 +30,7 @@ app.post("/users", (req, res) => {
   });
 });
 
-app.delete("/users/:email", (req, res) => {
+app.delete("/users/:email", checkAdmin, (req, res) => {
   const email = req.params.email;
   const index = users.findIndex((u) => u.email === email);
 
@@ -38,6 +41,11 @@ app.delete("/users/:email", (req, res) => {
 
   const deleted = users.splice(index, 1);
   res.json({ message: "User deleted", user: deleted[0] });
+});
+
+app.get("/me", (req, res) => {
+  const role = req.headers["x-user-role"] || "guest";
+  res.json({ role });
 });
 
 app.listen(PORT, () => {

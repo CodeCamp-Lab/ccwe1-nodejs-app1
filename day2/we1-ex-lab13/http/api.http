@@ -17,5 +17,8 @@ Content-Type: application/json
 }
 
 ### Delete user DELETE /users/:email
-DELETE  {{BASE_URL}}/users/john@gmail.com
-x-user-role: "user"
+DELETE  {{BASE_URL}}/users/bob@gmail.com
+x-user-role: user
+
+### Me GET /me
+GET {{BASE_URL}}/me
