@@ -1,0 +1,7 @@
+@BASE_URL = http://localhost:3000
+
+### Users GET /users
+GET {{BASE_URL}}/users
+
+### Posts GET /posts
+GET {{BASE_URL}}/posts
